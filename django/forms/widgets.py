@@ -933,8 +933,8 @@ class SelectDateWidget(Widget):
         if years:
             self.years = years
         else:
-            this_year = datetime.date.today().year
-            self.years = range(this_year, this_year + 10)
+            this_year = datetime.date.today().year-100
+            self.years = range(this_year, this_year + 200)
 
         # Optional dict of months to use in the "month" select box.
         if months:

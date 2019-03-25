@@ -341,7 +341,10 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
         """
         Return the first_name plus the last_name, with a space in between.
         """
-        full_name = '%s %s' % (self.first_name, self.last_name)
+        if len(self.last_name)>0 and self.last_name[0] >= u'\u4e00' and self.last_name[0] <=u'\u9fa5':
+            full_name = '%s%s' % (self.last_name, self.first_name)
+        else:
+            full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
 
     def get_short_name(self):
