@@ -1,3 +1,7 @@
+# Django for ovowagtail
+some minor fixes were made to fit for ovowagtail,
+
+# Django
 Django is a high-level Python Web framework that encourages rapid development
 and clean, pragmatic design. Thanks for checking it out.
 
