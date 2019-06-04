@@ -28,6 +28,9 @@ class BoundField:
         else:
             self.label = self.field.label
         self.help_text = field.help_text or ''
+        self.classname = field.classname or ''
+        self.style = field.style or ''
+        self.label_suffix = field.label_suffix or ''
 
     def __str__(self):
         """Render this field as an HTML widget."""

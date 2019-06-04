@@ -55,7 +55,7 @@ class Field:
     empty_values = list(validators.EMPTY_VALUES)
 
     def __init__(self, *, required=True, widget=None, label=None, initial=None,
-                 help_text='', error_messages=None, show_hidden_initial=False,
+                 help_text='', classname="",placeholder=None, style="", error_messages=None, show_hidden_initial=False,
                  validators=(), localize=False, disabled=False, label_suffix=None):
         # required -- Boolean that specifies whether the field is required.
         #             True by default.
@@ -70,6 +70,7 @@ class Field:
         # initial -- A value to use in this Field's initial display. This value
         #            is *not* used as a fallback if data isn't given.
         # help_text -- An optional string to use as "help text" for this Field.
+        # classname -- An optional string to use as "classname" for this Field.
         # error_messages -- An optional dictionary to override the default
         #                   messages that the field will raise.
         # show_hidden_initial -- Boolean that specifies if it is needed to render a
@@ -83,6 +84,8 @@ class Field:
         self.required, self.label, self.initial = required, label, initial
         self.show_hidden_initial = show_hidden_initial
         self.help_text = help_text
+        self.classname = classname
+        self.style = style
         self.disabled = disabled
         self.label_suffix = label_suffix
         widget = widget or self.widget
